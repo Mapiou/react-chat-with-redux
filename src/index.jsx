@@ -41,11 +41,13 @@ const reducers = combineReducers({
   currentUser: currentUserReducer
 });
 
+// Middlewares
 const middlewares = applyMiddleware(logger, reduxPromise);
+const store = createStore(reducers, initialState, middlewares);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, initialState, middlewares)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
