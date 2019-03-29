@@ -1,4 +1,5 @@
-import { FETCH_MESSAGES, CREATE_MESSAGE, SELECT_CHANNEL } from '../actions';
+import { FETCH_MESSAGES, CREATE_MESSAGE } from '../actions';
+// import { SELECT_CHANNEL } from '../actions';
 
 export default function(state = null, action) {
   switch (action.type) {
@@ -10,8 +11,8 @@ export default function(state = null, action) {
       copiedState.push(action.payload);
       return copiedState;
 
-    case SELECT_CHANNEL:
-      return [];
+    // case SELECT_CHANNEL:
+    //   return [];
 
     default:
       return state;
